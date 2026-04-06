@@ -51,5 +51,19 @@ INSERT INTO Users (name, email) VALUES
 ('Bob', 'bob@example.com'),
 ('Charlie', 'charlie@example.com'),
 ('David', 'david@example.com');
+CREATE TABLE Reviews (
+    review_id INT NOT NULL AUTO_INCREMENT,
+    user_id INT NOT NULL,
+    product_id INT NOT NULL,
+    review_text TEXT,
+    review_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (review_id),
+    CONSTRAINT fk_review_user
+        FOREIGN KEY (user_id)
+        REFERENCES Users(user_id),
+    CONSTRAINT fk_review_product
+        FOREIGN KEY (product_id)
+        REFERENCES Products(product_id)
+) ENGINE=InnoDB;
 
 
