@@ -8,7 +8,7 @@ CREATE DATABASE review_platform;
 USE review_platform;
 
 -- ==========================================
--- 1️⃣ Categories Table
+-- 1️⃣ Categories Tables
 -- ==========================================
 CREATE TABLE Categories (
     category_id INT NOT NULL,
