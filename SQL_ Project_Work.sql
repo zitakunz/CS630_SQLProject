@@ -65,5 +65,12 @@ CREATE TABLE Reviews (
         FOREIGN KEY (product_id)
         REFERENCES Products(product_id)
 ) ENGINE=InnoDB;
+# - Insert sample reviews
+INSERT INTO Reviews (user_id, product_id, review_text) VALUES
+(1, 1, 'Amazing phone with great battery life.'),
+(2, 1, 'Good value for the price.'),
+(3, 2, 'Laptop is fast but a bit heavy.'),
+(4, 3, 'Blender works perfectly for smoothies.');
+
 
 
