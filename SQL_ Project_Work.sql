@@ -46,3 +46,10 @@ CREATE TABLE Users (
     PRIMARY KEY (user_id)
 ) ENGINE=InnoDB;
 
+INSERT INTO Users (name, email) VALUES
+('Alice', 'alice@example.com'),
+('Bob', 'bob@example.com'),
+('Charlie', 'charlie@example.com'),
+('David', 'david@example.com');
+
+
