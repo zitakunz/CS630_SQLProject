@@ -35,4 +35,14 @@ INSERT INTO Products (product_id, product_name, category_id, price) VALUES
 (1, 'Smartphone', 1, 699.99),
 (2, 'Laptop', 1, 1299.99),
 (3, 'Blender', 3, 89.99);
+# - ==========================================
+-- 3️⃣ Users Table
+# -- ==========================================
+CREATE TABLE Users (
+    user_id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(100),
+    email VARCHAR(100) UNIQUE,
+    join_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (user_id)
+) ENGINE=InnoDB;
 
