@@ -89,6 +89,12 @@ CREATE TABLE Ratings (
         REFERENCES Products(product_id),
     CONSTRAINT uq_user_product UNIQUE(user_id, product_id) -- prevent duplicate ratings
 ) ENGINE=InnoDB;
+# -- Insert sample ratings
+INSERT INTO Ratings (user_id, product_id, rating) VALUES
+(1, 1, 5),
+(2, 1, 4),
+(3, 2, 4),
+(4, 3, 5);
 
 
 
