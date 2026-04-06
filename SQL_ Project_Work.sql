@@ -30,4 +30,9 @@ CREATE TABLE Products (
         FOREIGN KEY (category_id)
         REFERENCES Categories(category_id)
 ) ENGINE=InnoDB;
+-- Insert sample products
+INSERT INTO Products (product_id, product_name, category_id, price) VALUES
+(1, 'Smartphone', 1, 699.99),
+(2, 'Laptop', 1, 1299.99),
+(3, 'Blender', 3, 89.99);
 
