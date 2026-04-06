@@ -16,3 +16,7 @@ CREATE TABLE Categories (
     PRIMARY KEY (category_id)
 ) ENGINE=InnoDB;
 
+INSERT INTO Categories (category_id, category_name) VALUES
+(1, 'Electronics'),
+(2, 'Books'),
+(3, 'Home Appliances');
