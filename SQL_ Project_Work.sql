@@ -20,3 +20,14 @@ INSERT INTO Categories (category_id, category_name) VALUES
 (1, 'Electronics'),
 (2, 'Books'),
 (3, 'Home Appliances');
+CREATE TABLE Products (
+    product_id INT NOT NULL,
+    product_name VARCHAR(100),
+    category_id INT NOT NULL,
+    price DECIMAL(10,2),
+    PRIMARY KEY (product_id),
+    CONSTRAINT fk_category
+        FOREIGN KEY (category_id)
+        REFERENCES Categories(category_id)
+) ENGINE=InnoDB;
+
