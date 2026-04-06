@@ -71,6 +71,24 @@ INSERT INTO Reviews (user_id, product_id, review_text) VALUES
 (2, 1, 'Good value for the price.'),
 (3, 2, 'Laptop is fast but a bit heavy.'),
 (4, 3, 'Blender works perfectly for smoothies.');
+#- ==========================================
+#-- 5️⃣ Ratings Table
+#-- ==========================================
+CREATE TABLE Ratings (
+    rating_id INT NOT NULL AUTO_INCREMENT,
+    user_id INT NOT NULL,
+    product_id INT NOT NULL,
+    rating INT CHECK (rating BETWEEN 1 AND 5),
+    rating_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (rating_id),
+    CONSTRAINT fk_rating_user
+        FOREIGN KEY (user_id)
+        REFERENCES Users(user_id),
+    CONSTRAINT fk_rating_product
+        FOREIGN KEY (product_id)
+        REFERENCES Products(product_id),
+    CONSTRAINT uq_user_product UNIQUE(user_id, product_id) -- prevent duplicate ratings
+) ENGINE=InnoDB;
 
 
 
