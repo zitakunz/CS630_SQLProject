@@ -113,7 +113,13 @@ SELECT p.product_name, COUNT(rv.review_id) AS review_count
 FROM Products p
 LEFT JOIN Reviews rv ON p.product_id = rv.product_id
 GROUP BY p.product_name;
-
+-- Top-rated products (average rating)
+SELECT p.product_name, AVG(r.rating) AS avg_rating
+FROM Products p
+JOIN Ratings r ON p.product_id = r.product_id
+GROUP BY p.product_name
+ORDER BY avg_rating DESC
+LIMIT 5;
 
 
 
