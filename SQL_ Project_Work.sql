@@ -95,6 +95,12 @@ INSERT INTO Ratings (user_id, product_id, rating) VALUES
 (2, 1, 4),
 (3, 2, 4),
 (4, 3, 5);
+-- Average rating per product
+SELECT p.product_name, AVG(r.rating) AS avg_rating
+FROM Products p
+JOIN Ratings r ON p.product_id = r.product_id
+GROUP BY p.product_name;
+
 
 
 
