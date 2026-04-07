@@ -100,6 +100,14 @@ SELECT p.product_name, AVG(r.rating) AS avg_rating
 FROM Products p
 JOIN Ratings r ON p.product_id = r.product_id
 GROUP BY p.product_name;
+-- Reviews with ratings per user/product
+SELECT p.product_name, u.name AS user_name, rv.review_text, ra.rating
+FROM Reviews rv
+JOIN Users u ON rv.user_id = u.user_id
+JOIN Products p ON rv.product_id = p.product_id
+LEFT JOIN Ratings ra 
+    ON rv.user_id = ra.user_id AND rv.product_id = ra.product_id;
+
 
 
 
