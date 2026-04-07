@@ -108,6 +108,11 @@ JOIN Products p ON rv.product_id = p.product_id
 LEFT JOIN Ratings ra 
     ON rv.user_id = ra.user_id AND rv.product_id = ra.product_id;
 
+-- Count of reviews per product
+SELECT p.product_name, COUNT(rv.review_id) AS review_count
+FROM Products p
+LEFT JOIN Reviews rv ON p.product_id = rv.product_id
+GROUP BY p.product_name;
 
 
 
